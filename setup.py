@@ -53,8 +53,8 @@ def get_extensions():
     define_macros = []
     include_dirs = [extensions_dir]
 
-    force_cuda = os.getenv("FORCE_CUDA", "0") == "1"
-    force_no_cuda = os.getenv("PYTORCH3D_FORCE_NO_CUDA", "0") == "1"
+    force_cuda = False # os.getenv("FORCE_CUDA", "0") == "1"
+    force_no_cuda = True # os.getenv("PYTORCH3D_FORCE_NO_CUDA", "0") == "1"
     if (
         not force_no_cuda and torch.cuda.is_available() and CUDA_HOME is not None
     ) or force_cuda:
